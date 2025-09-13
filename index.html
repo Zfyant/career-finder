@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Career Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-10 relative">
+            <h1 class="font-bold mb-2">My Career Blueprint</h1>
+            <p class="text-lg">A comprehensive guide to discovering your ideal career path.</p>
+            
+            <!-- Theme switcher -->
+            <div class="absolute top-0 right-0 theme-switch-wrapper">
+                <label class="theme-switch" for="theme-switcher">
+                    <input type="checkbox" id="theme-switcher" />
+                    <div class="theme-slider round">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <!-- Step Navigation -->
+        <div class="step-navigation mb-8">
+            <button class="step-nav-btn active" data-step="1">1</button>
+            <button class="step-nav-btn" data-step="2">2</button>
+        </div>
+
+        <form id="career-profile-form">
+            <div id="step-1" class="form-step active">
+                <section class="section-card">
+                    <h2>❤️ Passions, Interests & Values</h2>
+                    <label><i>What drives you and gives your work meaning?</i></label>
+                    
+                    <div class="mb-6">
+                        <h4><label for="passions" class="block mb-2">What topics, fields, or causes are you passionate about?</label></h4>
+                        <div id="passions-container"></div>
+                        <button type="button" id="add-passion-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Passion</button>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4><label for="interests" class="block mb-2">What activities make you lose track of time? (Flow State Activities)</label></h4>
+                        <div id="flow-activities-container"></div>
+                        <button type="button" id="add-flow-activity-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Activity</button>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4><label for="problem-solving" class="block mb-2">If you had unlimited resources, what one problem in the world would you dedicate yourself to solving?</label></h4>
+                        <input type="text" id="problem-solving" name="problem-solving" class="w-full p-2 input-field" placeholder="e.g., Curing a disease, solving climate change, improving education...">
+                    </div>
+                </section>
+                
+                <section class="section-card">
+                    <h2>🧠 Personality & Work Style</h2>
+                    
+                    <label><i>Rate yourself on these traits to understand your work style preferences.</i></label>
+                    
+                    <div class="personality-trait">
+                        <div class="trait-labels">
+                            <span>Introvert</span>
+                            <span>Extrovert</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" min="1" max="7" value="4" class="slider" id="introvert-extrovert" name="introvert-extrovert">
+                            <div class="slider-ticks">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                            </div>
+                        </div>
+                        <div class="trait-descriptions">
+                            <span>Energized by solitude</span>
+                            <span>Energized by people</span>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-trait">
+                        <div class="trait-labels">
+                            <span>Detail-Oriented</span>
+                            <span>Big-Picture</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" min="1" max="7" value="4" class="slider" id="detail-bigpicture" name="detail-bigpicture">
+                            <div class="slider-ticks">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                            </div>
+                        </div>
+                        <div class="trait-descriptions">
+                            <span>Focus on details</span>
+                            <span>Focus on vision</span>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-trait">
+                        <div class="trait-labels">
+                            <span>Analytical</span>
+                            <span>Creative</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" min="1" max="7" value="4" class="slider" id="analytical-creative" name="analytical-creative">
+                            <div class="slider-ticks">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                            </div>
+                        </div>
+                        <div class="trait-descriptions">
+                            <span>Logic-driven</span>
+                            <span>Imagination-driven</span>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-trait">
+                        <div class="trait-labels">
+                            <span>Structured</span>
+                            <span>Flexible</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" min="1" max="7" value="4" class="slider" id="structured-flexible" name="structured-flexible">
+                            <div class="slider-ticks">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                            </div>
+                        </div>
+                        <div class="trait-descriptions">
+                            <span>Prefer routine</span>
+                            <span>Prefer variety</span>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-trait">
+                        <div class="trait-labels">
+                            <span>Independent</span>
+                            <span>Collaborative</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" min="1" max="7" value="4" class="slider" id="independent-collaborative" name="independent-collaborative">
+                            <div class="slider-ticks">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                            </div>
+                        </div>
+                        <div class="trait-descriptions">
+                            <span>Work alone</span>
+                            <span>Work with others</span>
+                        </div>
+                    </div>
+                    
+                    <label><i>Rate your comfort level with these soft skills.</i></label>
+                    <div class="space-y-4">
+                        <div class="soft-skill-slider">
+                            <label for="soft-leadership" class="font-normal">👑 Leadership</label>
+                            <div class="slider-wrapper">
+                                <input type="range" min="1" max="5" value="3" id="soft-leadership" name="soft-leadership" class="slider">
+                                <div class="slider-ticks">
+                                    <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                                </div>
+                            </div>
+                            <div class="slider-labels"><span>Guide Me</span><span></span><span>Confident</span><span></span><span>Master</span></div>
+                        </div>
+                        <div class="soft-skill-slider">
+                            <label for="soft-communication" class="font-normal">💬 Communication</label>
+                            <div class="slider-wrapper">
+                                <input type="range" min="1" max="5" value="3" id="soft-communication" name="soft-communication" class="slider">
+                                <div class="slider-ticks">
+                                    <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                                </div>
+                            </div>
+                            <div class="slider-labels"><span>Difficulty</span><span></span><span>Clear</span><span></span><span>Articulate</span></div>
+                        </div>
+                        <div class="soft-skill-slider">
+                            <label for="soft-empathy" class="font-normal">🤝 Empathy</label>
+                            <div class="slider-wrapper">
+                                <input type="range" min="1" max="5" value="3" id="soft-empathy" name="soft-empathy" class="slider">
+                                <div class="slider-ticks">
+                                    <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                                </div>
+                            </div>
+                            <div class="slider-labels"><span>Isolated</span><span></span><span>Considerate</span><span></span><span>Insightful</span></div>
+                        </div>
+                        <div class="soft-skill-slider">
+                            <label for="soft-public-speaking" class="font-normal">🎤 Public Speaking</label>
+                            <div class="slider-wrapper">
+                                <input type="range" min="1" max="5" value="3" id="soft-public-speaking" name="soft-public-speaking" class="slider">
+                                <div class="slider-ticks">
+                                    <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+                                </div>
+                            </div>
+                            <div class="slider-labels"><span>Terrified</span><span></span><span>Comfortable</span><span></span><span>Engaging</span></div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <section class="section-card">
+                    <h2>🛠️ Skills & Abilities</h2>
+                    
+                    <label><i>List your key strengths and areas for growth.</i></label>
+
+                    <h3>💪 Key Strengths</h3>
+                    <label>What are you naturally good at? e.g., Project Management</label>
+                    <div id="strengths-container"></div>
+                    <button type="button" id="add-strength-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Strength</button>
+
+                    <h3 class="mt-6">🎯 Growth Areas</h3>
+                    <label>Skills you're developing or want to improve. e.g., Public Speaking</label>
+                    <div id="growth-container"></div>
+                    <button type="button" id="add-growth-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Growth Area</button>
+
+                    <h3 class="mt-6">🔧 Hard Skills</h3>
+                    <label>Technical skills with proficiency and interest levels. e.g., JavaScript, SQL, Figma</label>
+                    <div id="hard-skills-container">
+                        <div id="hard-skills-list"></div>
+                    </div>
+                    <button type="button" id="add-hard-skill-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Hard Skill</button>
+
+                </section>
+            </div>
+
+
+
+            <div id="step-2" class="form-step">
+                <section class="section-card">
+                    <h2>🏢 Ideal Work Environment</h2>
+                    <h3><i>What type of workplace helps you thrive?</i></h3>
+
+                    <h3 class="mt-6">📍 Geographic Preferences</h3>
+                    <input type="text" id="location" name="location" class="input-field" placeholder="e.g., San Francisco Bay Area; Austin, TX; Remote OK">
+
+                    <h3 class="mt-6">Work Setting Preferences</h3>
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remote-work" name="work-setting" value="remote" class="mr-2">
+                            <label for="remote-work">🏠 Remote Work</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="hybrid" name="work-setting" value="hybrid" class="mr-2">
+                            <label for="hybrid">🔄 Hybrid</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="in-office" name="work-setting" value="in-office" class="mr-2">
+                            <label for="in-office">🏢 In-Office</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="travel" name="work-setting" value="travel" class="mr-2">
+                            <label for="travel">✈️ Frequent Travel</label>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-6">Company Size Preference</h3>
+                    <label class="text-sm text-gray-600 mb-2 block"><i>Note: Your ideal role might exist at any company size. Consider leaving this flexible.</i></label>
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="startup" name="company-size" value="startup" class="mr-2">
+                            <label for="startup">🚀 Startup (1-50)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="scale-up" name="company-size" value="scale-up" class="mr-2">
+                            <label for="scale-up">📈 Scale-up (51-500)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="large-corp" name="company-size" value="large-corp" class="mr-2">
+                            <label for="large-corp">🏛️ Large Corp (501-10,000)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="enterprise" name="company-size" value="enterprise" class="mr-2">
+                            <label for="enterprise">🌐 Enterprise (10,000+)</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="no-preference" name="company-size" value="no-preference" class="mr-2">
+                            <label for="no-preference">🤷 No Preference</label>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-6"><i>Which work pace do you prefer?</i></h3>
+                    <div class="slider-wrapper">
+                        <input type="range" min="1" max="3" value="2" class="slider" id="work-pace-slider" name="work-pace-slider">
+                        <div class="slider-ticks">
+                            <span class="tick"></span>
+                            <span class="tick"></span>
+                            <span class="tick"></span>
+                        </div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>🏛️ Steady</span>
+                        <span>⚖️ Balanced</span>
+                        <span>🚀 Fast-paced</span>
+                    </div>
+                </section>
+                <section class="section-card">
+                    <h2>⚙️ Preferences & Constraints</h2>
+
+                    <h3 class="mt-6">💵 Salary Expectations</h3>
+                    <div>
+                        <label for="salary-min">Target Annual Salary (Minimum)</label>
+                        <input type="number" id="salary-min" name="salary-min" class="input-field" placeholder="e.g., 60000">
+                    </div>
+
+                    <h3 class="mt-6">Core Values Checklist</h3>
+                    <label><i>What values are most important to you in a job/company? (Select top 5)</i></label>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="autonomy" name="values" value="autonomy" class="mr-2">
+                            <label for="autonomy">🕊️ Autonomy</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="stability" name="values" value="stability" class="mr-2">
+                            <label for="stability">🏛️ Stability</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="innovation" name="values" value="innovation" class="mr-2">
+                            <label for="innovation">✨ Innovation</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="social-impact" name="values" value="social-impact" class="mr-2">
+                            <label for="social-impact">🌍 Social Impact</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="financial-gain" name="values" value="financial-gain" class="mr-2">
+                            <label for="financial-gain">💰 Financial Gain</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="leadership" name="values" value="leadership" class="mr-2">
+                            <label for="leadership">👑 Leadership</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="work-life-balance" name="values" value="work-life-balance" class="mr-2">
+                            <label for="work-life-balance">⚖️ Work-Life Balance</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="creativity" name="values" value="creativity" class="mr-2">
+                            <label for="creativity">🎨 Creativity</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="collaboration" name="values" value="collaboration" class="mr-2">
+                            <label for="collaboration">❤️ Collaboration</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-card">
+                    <h2>🏆 Proud Accomplishments</h2>
+                    <label><i>Describe 1-2 accomplishments (professional or personal) that you are most proud of and why they were meaningful.</i></label>
+                    <textarea id="accomplishments" name="accomplishments" class="input-field mt-2" rows="4" placeholder="e.g., Led a cross-functional team to launch a new product feature that increased user engagement by 40%. This was meaningful because it demonstrated my ability to collaborate across departments and deliver measurable impact..."></textarea>
+                </section>
+                <section class="section-card">
+                    <h2>🚫 Drains & Deal-Breakers</h2>
+                    <label><i>What workplace issues, tasks, or situations would drain your energy or make you want to leave?</i></label>
+                    <div id="deal-breakers-container"></div>
+                    <button type="button" id="add-deal-breaker-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Drain/Deal-Breaker</button>
+                </section>
+                
+                <section class="section-card">
+                    <h2>📊 Job Scorecard</h2>
+                    <p class="text-sm mb-4">Define what makes a job great for you. Assign a weight to each category based on its importance. The total must equal 100%.</p>
+                    
+                    <div id="scorecard-container" class="space-y-4"></div>
+                    
+                    <!-- Hidden scorecard fields -->
+                    <div class="hidden">
+                        <input type="text" name="purpose" placeholder="Purpose">
+                        <input type="text" name="strengths" placeholder="Strengths">
+                        <input type="text" name="passions" placeholder="Passions">
+                        <input type="text" name="work-style" placeholder="Work Style">
+                        <input type="text" name="work-life-balance" placeholder="Work-Life Balance">
+                    </div>
+
+                    <div class="flex justify-between items-center mt-4 font-bold text-lg">
+                        <span>Total Weight:</span>
+                        <span id="total-weight">0%</span>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8">
+                <button type="button" id="prev-btn" class="btn btn-secondary">Back</button>
+                <div class="btn-group">
+                    <button type="button" id="import-btn" class="btn btn-cyan">Import</button>
+                    <button type="button" id="export-btn" class="btn btn-red">Export</button>
+                </div>
+                <div>
+                    <button type="button" id="next-btn" class="btn btn-primary">Next</button>
+                    <button type="submit" id="submit-btn" class="btn btn-green hidden">Generate My Profile Summary</button>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Output area -->
+        <div id="output-container" class="hidden mt-8 p-6 rounded-lg shadow-lg section-card">
+            <h2 class="font-bold mb-4">📝 Your Career Profile Summary</h2>
+            <div class="grid grid-cols-1 gap-6">
+                <div>
+                    <h3 class="font-bold text-lg mb-2 flex items-center justify-between">
+                        <span>AI-Powered Job Recommendations Prompt</span>
+                        <button type="button" id="copy-prompt-btn" title="Copy prompt" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </button>
+                    </h3>
+                    <textarea id="prompt-output" class="input-field w-full" readonly></textarea>
+                    <h3 class="font-bold text-lg mb-2 mt-4 flex items-center justify-between">
+                        <span>Raw JSON Data</span>
+                        <button type="button" id="copy-json-btn" title="Copy JSON" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </button>
+                    </h3>
+                    <pre id="json-output" class="text-sm overflow-x-auto"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use ES modules for better organization -->
+    <script src="scripts.js"></script>
+</body>
+</html>

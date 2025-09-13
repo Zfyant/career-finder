@@ -1,0 +1,535 @@
+/*
+File: styles.css
+Summary: This file contains all the styling for the Career Profile Builder application. It includes a light and dark theme, as well as styles for all the form elements, buttons, and other UI components.
+*/
+
+:root {
+    --bg-color: #F9FAFB;
+    --text-color: #111827;
+    --card-bg: white;
+    --border-color: #D1D5DB;
+    --input-bg: #F9FAFB;
+    --input-focus-border: #3B82F6;
+    --label-color: #374151;
+    --h2-color: #111827;
+    --h3-color: #1F2937;
+    --h4-color: #1F2937;
+    --primary-btn-bg: #3B82F6;
+    --primary-btn-text: white;
+    --secondary-btn-bg: #E5E7EB;
+    --secondary-btn-text: #374151;
+    --slider-track-bg: #d3d3d3;
+    --slider-thumb-bg: #3B82F6;
+    --disabled-btn-bg: #9CA3AF;
+    --disabled-btn-text: #E5E7EB;
+}
+
+.dark {
+    --bg-color: #111827;
+    --text-color: #bebebe;
+    --card-bg: #1F2937;
+    --border-color: #4B5563;
+    --input-bg: #374151;
+    --input-focus-border: #60A5FA;
+    --label-color: #9a9ca0;
+    --h2-color: #F9FAFB;
+    --h3-color: #E5E7EB;
+    --h4-color: #E5E7EB;
+    --primary-btn-bg: #60A5FA;
+    --primary-btn-text: #111827;
+    --secondary-btn-bg: #4B5563;
+    --secondary-btn-text: #F9FAFB;
+    --slider-track-bg: #4B5563;
+    --slider-thumb-bg: #60A5FA;
+    --disabled-btn-bg: #4B5563;
+    --disabled-btn-text: #9CA3AF;
+}
+
+/* Custom Checkbox Styling */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    line-height: 1.5;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: var(--input-focus-border);
+    border-color: var(--input-focus-border);
+    opacity: 0.1;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--input-focus-border);
+    border-color: var(--input-focus-border);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+* {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.section-card {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.section-card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body .input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+}
+
+body label {
+    font-size: 1.1rem;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--label-color);
+}
+
+body i {
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+body h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+body h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--h2-color);
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--h3-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+body h4, h4 label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--h4-color) !important;
+    margin: .75rem 0;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn:disabled {
+    background-color: var(--disabled-btn-bg);
+    color: var(--disabled-btn-text);
+    cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+    box-shadow: inset 0 0 7px 7px rgba(0,0,0,0.3);
+}
+
+.remove-btn {
+    margin-top: -5px;
+}
+
+.btn-cyan {
+    background-color: #55a596;
+    color: white;
+}
+
+.btn-cyan:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.btn-red {
+    background-color: #a73a44;
+    color: white;
+}
+
+.btn-red:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.btn-green {
+    background-color: #22c55e;
+    color: white;
+}
+
+.btn-green:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.btn-group .btn-cyan {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -2px;
+}
+
+.btn-group .btn-red {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-text);
+}
+
+.btn-primary:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider-container.with-labels {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider-label-left,
+.slider-label-right {
+    flex: 0 0 120px; /* Adjust width as needed */
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--label-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Personality trait styling */
+.personality-trait {
+    margin-bottom: 1.5rem;
+}
+
+.trait-labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.trait-descriptions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--label-color);
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.slider-ticks {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px; /* Match slider thumb padding */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* So they don't interfere with slider interaction */
+}
+
+.tick {
+    width: 2px;
+    height: 8px; /* Height of the tick mark */
+    margin-top: 7px;
+    background-color: var(--slider-thumb-bg);
+    border-radius: 1px;
+    transform: translateY(-2px);
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--slider-track-bg);
+    outline: none;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.slider:hover {
+    opacity: 0.7;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--slider-thumb-bg);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--card-bg);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--label-color);
+    margin-top: 0.5rem;
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-secondary {
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+/* Step Navigation */
+.step-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-btn-bg);
+    color: var(--secondary-btn-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.step-nav-btn:hover {
+    opacity: 0.9;
+}
+
+.step-nav-btn.active {
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-text);
+    border-color: var(--primary-btn-bg);
+}
+
+/* Theme Switcher */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 50px;
+    overflow: hidden;
+}
+
+.theme-switch input { display: none; }
+
+.theme-slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.theme-slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+}
+
+input:checked + .theme-slider {
+    background-color: var(--primary-btn-bg);
+}
+
+input:checked + .theme-slider:before {
+    transform: translateX(22px);
+}
+
+.theme-slider.round {
+    border-radius: 28px;
+}
+
+.theme-slider.round:before {
+    border-radius: 50%;
+}
+
+.sun, .moon {
+    position: absolute;
+    top: calc(50% - 2px);
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+.sun {
+    right: 4px;
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.moon {
+    left: 4px;
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+}
+
+input:checked + .theme-slider .sun {
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px);
+}
+
+input:checked + .theme-slider .moon {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+#prompt-output {
+    min-height: 200px;
+    resize: vertical;
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+pre {
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.hidden {
+    display: none;
+}
