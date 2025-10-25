@@ -1,24 +1,39 @@
+<!-- 
+  This is the main HTML file for the Career Blueprint application.
+  It includes the basic structure of the page, including the header, the progress indicator, and the form.
+  The form is divided into two steps, each with its own set of sections.
+  The file also includes links to the necessary CSS and JavaScript files.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- The head section contains metadata about the page, as well as links to external resources. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Career Profile</title>
+    <!-- Tailwind CSS is a utility-first CSS framework that allows for rapid UI development. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts is a library of free and open source fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- The styles.css file contains custom styles for the application. -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50"></div>
+
+    <!-- The main container for the application. -->
     <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
         
+        <!-- The header section contains the title of the application and a theme switcher. -->
         <header class="text-center mb-10 relative">
             <h1 class="font-bold mb-2">My Career Blueprint</h1>
             <p class="text-lg">A comprehensive guide to discovering your ideal career path.</p>
             
-            <!-- Theme switcher -->
+            <!-- The theme switcher allows the user to toggle between light and dark mode. -->
             <div class="absolute top-0 right-0 theme-switch-wrapper">
                 <label class="theme-switch" for="theme-switcher">
                     <input type="checkbox" id="theme-switcher" />
@@ -30,14 +45,35 @@
             </div>
         </header>
 
-        <!-- Step Navigation -->
-        <div class="step-navigation mb-8">
-            <button class="step-nav-btn active" data-step="1">1</button>
-            <button class="step-nav-btn" data-step="2">2</button>
+        <!-- The progress indicator shows the user their progress through the form. -->
+        <div class="progress-container mb-8">
+            <!-- The progress bar visually represents the user's progress. -->
+            <div class="progress-bar-wrapper mb-4">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
+                <div class="progress-percentage" id="progress-percentage">50%</div>
+            </div>
+            
+            <!-- The step navigation allows the user to move between the different steps of the form. -->
+            <div class="step-navigation">
+                <div class="step-item active" data-step="1">
+                    <button class="step-nav-btn active" data-step="1">1</button>
+                    <span class="step-label">Profile & Preferences</span>
+                </div>
+                <div class="step-item" data-step="2">
+                    <button class="step-nav-btn" data-step="2">2</button>
+                    <span class="step-label">Skills & Experience</span>
+                </div>
+            </div>
         </div>
 
+        <!-- The form is where the user enters their career profile information. -->
         <form id="career-profile-form">
+            <!-- Step 1 of the form contains sections for passions, interests, values, personality, work style, and skills. -->
             <div id="step-1" class="form-step active">
+
+                <!-- The Passions, Interests & Values section allows the user to input their passions, flow state activities, and problem-solving interests. -->
                 <section class="section-card">
                     <h2>❤️ Passions, Interests & Values</h2>
                     <label><i>What drives you and gives your work meaning?</i></label>
@@ -60,11 +96,13 @@
                     </div>
                 </section>
                 
+                <!-- The Personality & Work Style section allows the user to rate themselves on various personality traits and soft skills. -->
                 <section class="section-card">
                     <h2>🧠 Personality & Work Style</h2>
                     
                     <label><i>Rate yourself on these traits to understand your work style preferences.</i></label>
                     
+                    <!-- The personality trait sliders allow the user to rate themselves on a scale from 1 to 7. -->
                     <div class="personality-trait">
                         <div class="trait-labels">
                             <span>Introvert</span>
@@ -180,6 +218,7 @@
                         </div>
                     </div>
                     
+                    <!-- The soft skill sliders allow the user to rate their comfort level with various soft skills. -->
                     <label><i>Rate your comfort level with these soft skills.</i></label>
                     <div class="space-y-4">
                         <div class="soft-skill-slider">
@@ -226,6 +265,7 @@
 
 
                 </section>
+                <!-- The Skills & Abilities section allows the user to list their key strengths, growth areas, and hard skills. -->
                 <section class="section-card">
                     <h2>🛠️ Skills & Abilities</h2>
                     
@@ -253,7 +293,9 @@
 
 
 
+            <!-- Step 2 of the form contains sections for ideal work environment, compensation, and career goals. -->
             <div id="step-2" class="form-step">
+                <!-- The Ideal Work Environment section allows the user to specify their geographic preferences and work setting preferences. -->
                 <section class="section-card">
                     <h2>🏢 Ideal Work Environment</h2>
                     <h3><i>What type of workplace helps you thrive?</i></h3>
@@ -281,6 +323,7 @@
                         </div>
                     </div>
 
+                    <!-- The Company Size Preference section allows the user to select their preferred company size. -->
                     <h3 class="mt-6">Company Size Preference</h3>
                     <label class="text-sm text-gray-600 mb-2 block"><i>Note: Your ideal role might exist at any company size. Consider leaving this flexible.</i></label>
                     <div class="grid grid-cols-2 gap-4 mt-2">
@@ -306,6 +349,7 @@
                         </div>
                     </div>
 
+                    <!-- The Work Pace section allows the user to select their preferred work pace. -->
                     <h3 class="mt-6"><i>Which work pace do you prefer?</i></h3>
                     <div class="slider-wrapper">
                         <input type="range" min="1" max="3" value="2" class="slider" id="work-pace-slider" name="work-pace-slider">
@@ -321,6 +365,7 @@
                         <span>🚀 Fast-paced</span>
                     </div>
                 </section>
+                <!-- The Preferences & Constraints section allows the user to specify their salary expectations and core values. -->
                 <section class="section-card">
                     <h2>⚙️ Preferences & Constraints</h2>
 
@@ -330,6 +375,7 @@
                         <input type="number" id="salary-min" name="salary-min" class="input-field" placeholder="e.g., 60000">
                     </div>
 
+                    <!-- The Core Values Checklist allows the user to select their top 5 core values. -->
                     <h3 class="mt-6">Core Values Checklist</h3>
                     <label><i>What values are most important to you in a job/company? (Select top 5)</i></label>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
@@ -371,11 +417,13 @@
                         </div>
                     </div>
                 </section>
+                <!-- The Proud Accomplishments section allows the user to describe their most proud accomplishments. -->
                 <section class="section-card">
                     <h2>🏆 Proud Accomplishments</h2>
                     <label><i>Describe 1-2 accomplishments (professional or personal) that you are most proud of and why they were meaningful.</i></label>
                     <textarea id="accomplishments" name="accomplishments" class="input-field mt-2" rows="4" placeholder="e.g., Led a cross-functional team to launch a new product feature that increased user engagement by 40%. This was meaningful because it demonstrated my ability to collaborate across departments and deliver measurable impact..."></textarea>
                 </section>
+                <!-- The Drains & Deal-Breakers section allows the user to list their workplace deal-breakers. -->
                 <section class="section-card">
                     <h2>🚫 Drains & Deal-Breakers</h2>
                     <label><i>What workplace issues, tasks, or situations would drain your energy or make you want to leave?</i></label>
@@ -383,13 +431,14 @@
                     <button type="button" id="add-deal-breaker-btn" class="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800">+ Add Drain/Deal-Breaker</button>
                 </section>
                 
+                <!-- The Job Scorecard section allows the user to define what makes a job great for them by assigning weights to different categories. -->
                 <section class="section-card">
                     <h2>📊 Job Scorecard</h2>
                     <p class="text-sm mb-4">Define what makes a job great for you. Assign a weight to each category based on its importance. The total must equal 100%.</p>
                     
                     <div id="scorecard-container" class="space-y-4"></div>
                     
-                    <!-- Hidden scorecard fields -->
+                    <!-- Hidden scorecard fields are used to store the scorecard data. -->
                     <div class="hidden">
                         <input type="text" name="purpose" placeholder="Purpose">
                         <input type="text" name="strengths" placeholder="Strengths">
@@ -405,7 +454,7 @@
                 </section>
             </div>
 
-            <!-- Navigation -->
+            <!-- The navigation buttons allow the user to move between steps, import/export data, and generate the career profile summary. -->
             <div class="flex justify-between items-center mt-8">
                 <button type="button" id="prev-btn" class="btn btn-secondary">Back</button>
                 <div class="btn-group">
@@ -414,40 +463,32 @@
                 </div>
                 <div>
                     <button type="button" id="next-btn" class="btn btn-primary">Next</button>
-                    <button type="submit" id="submit-btn" class="btn btn-green hidden">Generate My Profile Summary</button>
+                    <button type="submit" id="submit-btn" class="btn btn-green hidden">Generate</button>
                 </div>
             </div>
         </form>
         
-        <!-- Output area -->
+        <!-- The output container displays the generated career profile summary and the AI-powered job recommendations prompt. -->
         <div id="output-container" class="hidden mt-8 p-6 rounded-lg shadow-lg section-card">
             <h2 class="font-bold mb-4">📝 Your Career Profile Summary</h2>
             <div class="grid grid-cols-1 gap-6">
                 <div>
                     <h3 class="font-bold text-lg mb-2 flex items-center justify-between">
                         <span>AI-Powered Job Recommendations Prompt</span>
+                        <span><i class="copy-prompt-text">Copy this and paste into your AI of choice!</i></span>
                         <button type="button" id="copy-prompt-btn" title="Copy prompt" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
                         </button>
                     </h3>
-                    <textarea id="prompt-output" class="input-field w-full" readonly></textarea>
-                    <h3 class="font-bold text-lg mb-2 mt-4 flex items-center justify-between">
-                        <span>Raw JSON Data</span>
-                        <button type="button" id="copy-json-btn" title="Copy JSON" class="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                        </button>
-                    </h3>
-                    <pre id="json-output" class="text-sm overflow-x-auto"></pre>
+                    <div id="prompt-output" class="input-field w-full p-2 border rounded-md bg-gray-100 dark:bg-gray-800" style="white-space: pre-wrap; word-wrap: break-word;"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Use ES modules for better organization -->
-    <script src="scripts.js"></script>
+    <!-- The main.js file is the entry point for the application's JavaScript code. -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

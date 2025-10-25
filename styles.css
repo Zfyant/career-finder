@@ -3,6 +3,7 @@ File: styles.css
 Summary: This file contains all the styling for the Career Profile Builder application. It includes a light and dark theme, as well as styles for all the form elements, buttons, and other UI components.
 */
 
+/* The root element is used to define global CSS variables for the light theme. */
 :root {
     --bg-color: #F9FAFB;
     --text-color: #111827;
@@ -24,6 +25,7 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     --disabled-btn-text: #E5E7EB;
 }
 
+/* The .dark class is used to override the root variables for the dark theme. */
 .dark {
     --bg-color: #111827;
     --text-color: #bebebe;
@@ -45,7 +47,7 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     --disabled-btn-text: #9CA3AF;
 }
 
-/* Custom Checkbox Styling */
+/* The checkbox-container class is used to style the custom checkboxes. */
 .checkbox-container {
     display: block;
     position: relative;
@@ -57,6 +59,7 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     line-height: 1.5;
 }
 
+/* The checkbox-container input is hidden, as we are using a custom checkmark. */
 .checkbox-container input {
     position: absolute;
     opacity: 0;
@@ -65,6 +68,7 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     width: 0;
 }
 
+/* The checkmark class is used to style the custom checkmark. */
 .checkmark {
     position: absolute;
     top: 0;
@@ -77,27 +81,32 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     transition: all 0.3s ease;
 }
 
+/* The checkbox-container:hover input ~ .checkmark class is used to style the checkmark on hover. */
 .checkbox-container:hover input ~ .checkmark {
     background-color: var(--input-focus-border);
     border-color: var(--input-focus-border);
     opacity: 0.1;
 }
 
+/* The checkbox-container input:checked ~ .checkmark class is used to style the checkmark when the checkbox is checked. */
 .checkbox-container input:checked ~ .checkmark {
     background-color: var(--input-focus-border);
     border-color: var(--input-focus-border);
 }
 
+/* The checkmark:after class is used to create the checkmark symbol. */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
+/* The checkbox-container input:checked ~ .checkmark:after class is used to display the checkmark symbol when the checkbox is checked. */
 .checkbox-container input:checked ~ .checkmark:after {
     display: block;
 }
 
+/* The checkbox-container .checkmark:after class is used to style the checkmark symbol. */
 .checkbox-container .checkmark:after {
     left: 6px;
     top: 2px;
@@ -108,10 +117,12 @@ Summary: This file contains all the styling for the Career Profile Builder appli
     transform: rotate(45deg);
 }
 
+/* The * selector is used to apply a transition to all elements, for a smooth theme change. */
 * {
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+/* The body element is styled with the theme's background and text colors. */
 body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -120,6 +131,7 @@ body {
     color: var(--text-color);
 }
 
+/* The .section-card class is used to style the cards that contain each section of the form. */
 .section-card {
     background-color: var(--card-bg);
     border-radius: 0.75rem;
@@ -129,10 +141,12 @@ body {
     border: 1px solid var(--border-color);
 }
 
+/* The .section-card:hover class is used to add a hover effect to the section cards. */
 .section-card:hover {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
+/* The .input-field class is used to style the form input fields. */
 body .input-field {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -142,12 +156,21 @@ body .input-field {
     color: var(--text-color);
 }
 
+/* The .input-field:focus class is used to style the input fields when they are focused. */
 .input-field:focus {
     outline: none;
     border-color: var(--input-focus-border);
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
 }
 
+/* The .input-field[disabled] class is used to style disabled input fields. */
+.input-field[disabled] {
+    background-color: var(--disabled-btn-bg) !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* The label element is styled with the theme's label color. */
 body label {
     font-size: 1.1rem;
     display: block;
@@ -156,11 +179,18 @@ body label {
     color: var(--label-color);
 }
 
+/* The i element is used for italicized text, such as notes and descriptions. */
 body i {
     font-size: 0.8em;
     margin-left: 10px;
 }
 
+/* The .copy-prompt-text class is used to style the text that encourages the user to copy the AI prompt. */
+.copy-prompt-text {
+    color: var(--label-color);
+}
+
+/* The h1 element is styled as the main heading of the page. */
 body h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -168,6 +198,7 @@ body h1 {
     margin-bottom: 1rem;
 }
 
+/* The h2 element is styled as a section heading. */
 body h2 {
     font-size: 1.5em;
     font-weight: 700;
@@ -177,6 +208,7 @@ body h2 {
     padding-bottom: 0.75rem;
 }
 
+/* The h3 element is styled as a sub-section heading. */
 body h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -185,13 +217,24 @@ body h3 {
     margin-bottom: 1rem;
 }
 
+/* The h4 element is styled as a smaller heading. */
 body h4, h4 label {
     font-size: 1rem;
     font-weight: 500;
     color: var(--h4-color) !important;
     margin: .75rem 0;
 }
+body .gap-2 {
+    gap: 0.25rem;
+}
 
+
+body .lift-emoji {
+    padding-bottom: 7px;
+    font-size: 1.5em;
+}
+
+/* The .btn class is the base class for all buttons. */
 .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -201,80 +244,96 @@ body h4, h4 label {
     transition: all 0.1s ease-in-out;
 }
 
+/* The .btn:disabled class is used to style disabled buttons. */
 .btn:disabled {
     background-color: var(--disabled-btn-bg);
     color: var(--disabled-btn-text);
     cursor: not-allowed;
 }
 
+/* The .btn:hover:not(:disabled) class is used to add a hover effect to buttons. */
 .btn:hover:not(:disabled) {
     box-shadow: inset 0 0 7px 7px rgba(0,0,0,0.3);
 }
 
+/* The .remove-btn class is used for buttons that remove items from a list. */
 .remove-btn {
     margin-top: -5px;
 }
 
+/* The .btn-cyan class is used for the import button. */
 .btn-cyan {
     background-color: #55a596;
     color: white;
 }
 
+/* The .btn-cyan:hover:not(:disabled) class is used to add a hover effect to the import button. */
 .btn-cyan:hover:not(:disabled) {
     opacity: 0.9;
 }
 
+/* The .btn-red class is used for the export button. */
 .btn-red {
     background-color: #a73a44;
     color: white;
 }
 
+/* The .btn-red:hover:not(:disabled) class is used to add a hover effect to the export button. */
 .btn-red:hover:not(:disabled) {
     opacity: 0.9;
 }
 
+/* The .btn-green class is used for the generate button. */
 .btn-green {
     background-color: #22c55e;
     color: white;
 }
 
+/* The .btn-green:hover:not(:disabled) class is used to add a hover effect to the generate button. */
 .btn-green:hover:not(:disabled) {
     opacity: 0.9;
 }
 
+/* The .btn-group class is used to group the import and export buttons together. */
 .btn-group .btn-cyan {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin-right: -2px;
 }
 
+/* The .btn-group .btn-red class is used to group the import and export buttons together. */
 .btn-group .btn-red {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -2px;
 }
 
+/* The .btn-primary class is used for the main action buttons, such as "Next" and "Generate". */
 .btn-primary {
     background-color: var(--primary-btn-bg);
     color: var(--primary-btn-text);
 }
 
+/* The .btn-primary:hover:not(:disabled) class is used to add a hover effect to the primary buttons. */
 .btn-primary:hover:not(:disabled) {
     opacity: 0.9;
 }
 
+/* The .slider-container class is used to style the container for the sliders. */
 .slider-container {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* The .slider-container.with-labels class is used to style the container for sliders with labels. */
 .slider-container.with-labels {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
+/* The .slider-label-left and .slider-label-right classes are used to style the labels for the sliders. */
 .slider-label-left,
 .slider-label-right {
     flex: 0 0 120px; /* Adjust width as needed */
@@ -287,11 +346,12 @@ body h4, h4 label {
     justify-content: center;
 }
 
-/* Personality trait styling */
+/* The .personality-trait class is used to style the container for each personality trait slider. */
 .personality-trait {
     margin-bottom: 1.5rem;
 }
 
+/* The .trait-labels class is used to style the labels for the personality traits. */
 .trait-labels {
     display: flex;
     justify-content: space-between;
@@ -299,6 +359,7 @@ body h4, h4 label {
     margin-bottom: 0.25rem;
 }
 
+/* The .trait-descriptions class is used to style the descriptions for the personality traits. */
 .trait-descriptions {
     display: flex;
     justify-content: space-between;
@@ -308,11 +369,13 @@ body h4, h4 label {
     margin-top: 0.25rem;
 }
 
+/* The .slider-wrapper class is used to style the wrapper for the sliders. */
 .slider-wrapper {
     position: relative;
     flex-grow: 1;
 }
 
+/* The .slider-ticks class is used to style the ticks on the sliders. */
 .slider-ticks {
     position: absolute;
     width: 100%;
@@ -324,6 +387,7 @@ body h4, h4 label {
     pointer-events: none; /* So they don't interfere with slider interaction */
 }
 
+/* The .tick class is used to style the individual ticks on the sliders. */
 .tick {
     width: 2px;
     height: 8px; /* Height of the tick mark */
@@ -333,6 +397,7 @@ body h4, h4 label {
     transform: translateY(-2px);
 }
 
+/* The .slider class is used to style the sliders. */
 .slider {
     -webkit-appearance: none;
     appearance: none;
@@ -344,10 +409,12 @@ body h4, h4 label {
     border-radius: 5px;
 }
 
+/* The .slider:hover class is used to add a hover effect to the sliders. */
 .slider:hover {
     opacity: 0.7;
 }
 
+/* The .slider::-webkit-slider-thumb class is used to style the thumb of the sliders. */
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -359,6 +426,7 @@ body h4, h4 label {
     border: 1px solid var(--card-bg);
 }
 
+/* The .slider-labels class is used to style the labels for the sliders. */
 .slider-labels {
     display: flex;
     justify-content: space-between;
@@ -367,37 +435,109 @@ body h4, h4 label {
     margin-top: 0.5rem;
 }
 
+/* The .form-step class is used to hide the form steps that are not active. */
 .form-step {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* The .form-step.active class is used to show the active form step. */
 .form-step.active {
     display: block;
 }
 
+/* The @keyframes fadeIn animation is used to fade in the form steps. */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* The .btn-secondary class is used for the "Back" button. */
 .btn-secondary {
     background-color: var(--primary-btn-bg);
     color: var(--primary-btn-text);
 }
 
+/* The .btn-secondary:hover:not(:disabled) class is used to add a hover effect to the secondary buttons. */
 .btn-secondary:hover:not(:disabled) {
     opacity: 0.9;
 }
 
-/* Step Navigation */
+/* The .progress-container class is used to style the container for the progress bar. */
+.progress-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* The .progress-bar-wrapper class is used to style the wrapper for the progress bar. */
+.progress-bar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* The .progress-bar-bg class is used to style the background of the progress bar. */
+.progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background-color: var(--secondary-btn-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* The .progress-bar-fill class is used to style the fill of the progress bar. */
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-btn-bg), #3b82f6);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 50%;
+}
+
+/* The .progress-percentage class is used to style the percentage text for the progress bar. */
+.progress-percentage {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-btn-bg);
+    min-width: 3rem;
+    text-align: center;
+}
+
+/* The .step-navigation class is used to style the navigation for the form steps. */
 .step-navigation {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
+/* The .step-item class is used to style the individual items in the step navigation. */
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* The .step-item.active .step-label class is used to style the label of the active step. */
+.step-item.active .step-label {
+    color: var(--primary-btn-bg);
+    font-weight: 600;
+}
+
+/* The .step-connector class is used to style the connector between the steps. */
+.step-connector {
+    width: 3rem;
+    height: 2px;
+    background-color: var(--secondary-btn-bg);
+    margin: 0 0.5rem;
+}
+
+/* The .step-nav-btn class is used to style the navigation buttons for the steps. */
 .step-nav-btn {
     width: 2.5rem;
     height: 2.5rem;
@@ -413,17 +553,50 @@ body h4, h4 label {
     border: 2px solid transparent;
 }
 
+/* The .step-nav-btn:hover class is used to add a hover effect to the step navigation buttons. */
 .step-nav-btn:hover {
     opacity: 0.9;
+    transform: scale(1.05);
 }
 
+/* The .step-nav-btn.active class is used to style the active step navigation button. */
 .step-nav-btn.active {
     background-color: var(--primary-btn-bg);
     color: var(--primary-btn-text);
     border-color: var(--primary-btn-bg);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
-/* Theme Switcher */
+/* The .step-label class is used to style the labels for the steps. */
+.step-label {
+    font-size: 0.75rem;
+    color: var(--secondary-btn-text);
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* The @media (max-width: 640px) media query is used to apply responsive styles for smaller screens. */
+@media (max-width: 640px) {
+    .step-label {
+        font-size: 0.625rem;
+    }
+    
+    .step-connector {
+        width: 2rem;
+    }
+    
+    .progress-bar-wrapper {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .progress-percentage {
+        align-self: flex-end;
+    }
+}
+
+/* The .theme-switch-wrapper class is used to style the wrapper for the theme switcher. */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -432,6 +605,7 @@ body h4, h4 label {
     right: 0.5rem;
 }
 
+/* The .theme-switch class is used to style the theme switcher. */
 .theme-switch {
     display: inline-block;
     height: 28px;
@@ -440,8 +614,10 @@ body h4, h4 label {
     overflow: hidden;
 }
 
+/* The .theme-switch input is hidden, as we are using a custom slider. */
 .theme-switch input { display: none; }
 
+/* The .theme-slider class is used to style the slider for the theme switcher. */
 .theme-slider {
     background-color: #ccc;
     bottom: 0;
@@ -453,6 +629,7 @@ body h4, h4 label {
     transition: .4s;
 }
 
+/* The .theme-slider:before class is used to style the thumb of the theme switcher slider. */
 .theme-slider:before {
     background-color: #fff;
     bottom: 4px;
@@ -464,22 +641,27 @@ body h4, h4 label {
     width: 20px;
 }
 
+/* The input:checked + .theme-slider class is used to style the theme switcher slider when it is checked. */
 input:checked + .theme-slider {
     background-color: var(--primary-btn-bg);
 }
 
+/* The input:checked + .theme-slider:before class is used to move the thumb of the theme switcher slider when it is checked. */
 input:checked + .theme-slider:before {
     transform: translateX(22px);
 }
 
+/* The .theme-slider.round class is used to make the theme switcher slider round. */
 .theme-slider.round {
     border-radius: 28px;
 }
 
+/* The .theme-slider.round:before class is used to make the thumb of the theme switcher slider round. */
 .theme-slider.round:before {
     border-radius: 50%;
 }
 
+/* The .sun and .moon classes are used to style the sun and moon icons for the theme switcher. */
 .sun, .moon {
     position: absolute;
     top: calc(50% - 2px);
@@ -488,38 +670,45 @@ input:checked + .theme-slider:before {
     transition: all 0.4s ease;
 }
 
+/* The .sun class is used to style the sun icon. */
 .sun {
     right: 4px;
     opacity: 1;
     transform: translateY(-50%);
 }
 
+/* The .moon class is used to style the moon icon. */
 .moon {
     left: 4px;
     opacity: 0;
     transform: translateY(-50%) translateX(-20px);
 }
 
+/* The input:checked + .theme-slider .sun class is used to hide the sun icon when the theme switcher is checked. */
 input:checked + .theme-slider .sun {
     opacity: 0;
     transform: translateY(-50%) translateX(20px);
 }
 
+/* The input:checked + .theme-slider .moon class is used to show the moon icon when the theme switcher is checked. */
 input:checked + .theme-slider .moon {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
 }
 
+/* The #prompt-output class is used to style the output area for the AI prompt. */
 #prompt-output {
     min-height: 200px;
-    resize: vertical;
+    resize: none;
     background-color: var(--input-bg) !important;
     color: var(--text-color) !important;
     white-space: pre-wrap;
     word-wrap: break-word;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
+/* The pre element is used to style the code blocks in the AI prompt. */
 pre {
     background-color: var(--input-bg) !important;
     color: var(--text-color) !important;
@@ -530,6 +719,32 @@ pre {
     word-wrap: break-word;
 }
 
+/* The .hidden class is used to hide elements. */
 .hidden {
     display: none;
+}
+
+/* Toast notification styles */
+.toast {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.success {
+    background-color: #2f855a; /* green-600 */
+}
+
+.toast.error {
+    background-color: #c53030; /* red-600 */
 }

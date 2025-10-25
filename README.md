@@ -2,7 +2,7 @@
 
 ![Career Journey](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=300&fit=crop&crop=center)
 
-# 🚀✨ Discover Your Perfect Career Path in Minutes ✨🚀
+# 🚀 Discover Your Perfect Career Path in Minutes 🚀
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)](https://github.com) [![AI Powered](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge&logo=openai)](https://openai.com) [![Privacy First](https://img.shields.io/badge/Privacy-First-green?style=for-the-badge&logo=shield)](https://privacy.com) [![100% Free](https://img.shields.io/badge/100%25-Free-gold?style=for-the-badge&logo=gift)](https://github.com)
 
 ![Divider](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
@@ -148,11 +148,38 @@ Explore what makes you tick professionally
 ```bash
 🎬 LIGHTS, CAMERA, ACTION! 🎬
 
+```
+
+
 ┌──────────────────────────────────────┐
 │  Step 1: Open index.html in browser  │
 │  Step 2: Click "Start Your Journey!" │
 │  Step 3: Watch the magic happen      │
 └──────────────────────────────────────┘
+
+## 🏗️ **Technical Architecture** 🏗️
+
+### **Modular JavaScript Structure**
+
+The application is built with a clean, modular architecture for maintainability and scalability:
+
+- **`main.js`** - Main application entry point and core controller
+- **`form-utilities.js`** - Handles form data collection, validation, and export logic
+- **`form-state-manager.js`** - Manages the centralized state of form data
+- **`dynamic-list-manager.js`** - Controls dynamic list elements within the form
+- **`dom-utils.js`** - Provides utility functions for DOM manipulation
+- **`progressive-loader.js`** - Manages the progressive loading of form sections
+- **`prompt.js`** - Contains the template for generating the LLM prompt
+- **`toast.js`** - Manages the display of toast notifications for user feedback
+
+### **Key Features**
+
+✅ **Modular Design** - Clean separation of concerns
+✅ **State Management** - Centralized form data handling
+✅ **Dynamic Forms** - Add/remove form elements on the fly
+✅ **Progressive Loading** - Smooth step-by-step experience
+✅ **Data Validation** - Comprehensive form validation
+✅ **Export Ready** - JSON export for AI processing
 ```
 
 <div align="center">
