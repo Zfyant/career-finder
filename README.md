@@ -174,6 +174,7 @@ The application is built with a clean, modular architecture for maintainability 
 
 ### **Key Features**
 
+```
 ✅ **Modular Design** - Clean separation of concerns
 ✅ **State Management** - Centralized form data handling
 ✅ **Dynamic Forms** - Add/remove form elements on the fly
