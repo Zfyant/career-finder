@@ -2,10 +2,12 @@
 
 ![Career Journey](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=300&fit=crop&crop=center)
 
-# 🚀 Discover Your Perfect Career Path in Minutes 🚀
+# 🚀 Discover Your Perfect Career in Minutes 🚀
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)](https://github.com) [![AI Powered](https://img.shields.io/badge/AI-Powered-blue?style=for-the-badge&logo=openai)](https://openai.com) [![Privacy First](https://img.shields.io/badge/Privacy-First-green?style=for-the-badge&logo=shield)](https://privacy.com) [![100% Free](https://img.shields.io/badge/100%25-Free-gold?style=for-the-badge&logo=gift)](https://github.com)
 
 ![Divider](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
+
+ <button style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);"><a href="https://zfyant.github.io/career-finder/" target="_blank">🚀 Test Now!</a></button>
 
 ### 🎯 **The Career Profile Generator** 🎯
 
@@ -174,6 +176,7 @@ The application is built with a clean, modular architecture for maintainability 
 
 ### **Key Features**
 
+```
 ✅ **Modular Design** - Clean separation of concerns
 ✅ **State Management** - Centralized form data handling
 ✅ **Dynamic Forms** - Add/remove form elements on the fly
@@ -186,52 +189,40 @@ The application is built with a clean, modular architecture for maintainability 
 
 **💫 That's it! You're literally 3 clicks away from career clarity! 💫**
 
-[![Get Started](https://img.shields.io/badge/🚀%20GET%20STARTED%20NOW-Click%20Here-brightgreen?style=for-the-badge&labelColor=black)](./index.html)
-
-![Divider](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
-
-### 🌟 **Help Make This Even More Amazing!** 🌟
+[![Get Started](https://img.shields.io/badge/🚀%20GET%20STARTED%20NOW-Click%20Here-brightgreen?style=for-the-badge&labelColor=black)](https://zfyant.github.io/career-finder/)
 
 <table>
 <tr>
 <td align="center" width="33%">
 
-![Bug Report](https://img.icons8.com/?size=100&id=dk97pPw5faVb&format=png&color=000000)
-
-**🐛 Spot a Bug?**
-
-[Open an Issue](https://github.com/issues)
-
-</td>
-<td align="center" width="33%">
-
-![Feature Idea](https://img.icons8.com/?size=100&id=eUbusB6M5M1J&format=png&color=000000)
+[![Feature Idea](https://img.icons8.com/?size=100&id=118971&format=png&color=000000)](https://github.com/Zfyant/career-finder/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=)
 
 **💡 Feature Ideas?**
 
-[Share Your Thoughts](https://github.com/discussions)
+</td>
+<td align="center" width="33%">
+
+[![Bug Report](https://img.icons8.com/?size=100&id=IhVSCy9iejUU&format=png&color=000000)](https://github.com/Zfyant/career-finder/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)
+
+**🐛 Spot a Bug?**
 
 </td>
 <td align="center" width="33%">
 
-![Code Contribution](https://img.icons8.com/?size=100&id=sNLuT9tfwa6Q&format=png&color=000000)
+[![Join Discord](https://img.icons8.com/?size=100&id=RLJfWOxNk8Bc&format=png)](https://discord.gg/Y3NgeRF9eP)
 
-**🚀 Code Contributions?**
-
-[Submit a PR](https://github.com/pulls)
+**💬 Reach Me!**
 
 </td>
 </tr>
 </table>
 
+
+![Sponge Bobby Boi](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif)
 *Made with ❤️ for career explorers everywhere*
-
-
-[![Stars](https://img.shields.io/github/stars/zfyant/repo?style=social)](https://github.com/zfyant/repo/career-finder) [![Forks](https://img.shields.io/github/forks/zfyant/repo?style=social)](https://github.com/zfyant/career-finder/network/members) [![Issues](https://img.shields.io/github/issues/zfyant/repo?style=social)](https://github.com/zfyant/career-finder/issues)
 
 **⭐ Don't forget to star this repo if it helps you! ⭐**
 
-
-![Thank You](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif)
+[![Stars](https://img.shields.io/github/stars/zfyant/career-finder?style=for-the-badge)](https://github.com/Zfyant/career-finder)  [![Forks](https://img.shields.io/github/forks/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/network/members) [![Issues](https://img.shields.io/github/issues/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/issues)
 
 </div>
