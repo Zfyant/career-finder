@@ -152,13 +152,6 @@ Explore what makes you tick professionally
 
 ```
 
-
-┌──────────────────────────────────────┐
-│  Step 1: Open index.html in browser  │
-│  Step 2: Click "Start Your Journey!" │
-│  Step 3: Watch the magic happen      │
-└──────────────────────────────────────┘
-
 ## 🏗️ **Technical Architecture** 🏗️
 
 ### **Modular JavaScript Structure**
@@ -187,7 +180,7 @@ The application is built with a clean, modular architecture for maintainability 
 
 <div align="center">
 
-**💫 That's it! You're literally 3 clicks away from career clarity! 💫**
+**💫 That's it! You're a few clicks away from career clarity! 💫**
 
 [![Get Started](https://img.shields.io/badge/🚀%20GET%20STARTED%20NOW-Click%20Here-brightgreen?style=for-the-badge&labelColor=black)](https://zfyant.github.io/career-finder/)
 
@@ -223,6 +216,6 @@ The application is built with a clean, modular architecture for maintainability 
 
 **⭐ Don't forget to star this repo if it helps you! ⭐**
 
-[![Stars](https://img.shields.io/github/stars/zfyant/career-finder?style=for-the-badge)](https://github.com/Zfyant/career-finder)  [![Forks](https://img.shields.io/github/forks/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/network/members) [![Issues](https://img.shields.io/github/issues/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/issues)
+[![Forks](https://img.shields.io/github/forks/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/network/members) [![Issues](https://img.shields.io/github/issues/zfyant/career-finder?style=for-the-badge)](https://github.com/zfyant/career-finder/issues)
 
 </div>
