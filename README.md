@@ -190,7 +190,7 @@ The application is built with a clean, modular architecture for maintainability 
 
 [![Feature Idea](https://img.icons8.com/?size=100&id=118971&format=png&color=000000)](https://github.com/Zfyant/career-finder/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=)
 
-**💡 Feature Ideas?**
+**💡 Ideas?**
 
 </td>
 <td align="center" width="33%">
@@ -210,8 +210,12 @@ The application is built with a clean, modular architecture for maintainability 
 </tr>
 </table>
 
+<center>
 
 ![Sponge Bobby Boi](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif)
+
+</center>
+
 *Made with ❤️ for career explorers everywhere*
 
 **⭐ Don't forget to star this repo if it helps you! ⭐**
